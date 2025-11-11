@@ -3,14 +3,14 @@ import matplotlib.pyplot as plt
 
 
 
-def data_visualizer(i): 
-    #function to visualize the digit at index i (row i) in the dataset
+def data_visualizer(i, data_path='digits_dataset.csv'): 
+    #function to visualize the digit at index i (row i) in the dataset (dataset is ordered in no particular order)
     #each row in the dataset corresponds to an unwrapped 28*28 image of drawn digit.
-    data = pd.read_csv('digits_dataset.csv')
+    # data = pd.read_csv('digits_dataset.csv')
 
-    label = data.iloc[i, 0] #identity of the digit
+    label = data_path.iloc[i, 0] #identity of the digit
 
-    pixels = data.iloc[i, 1:].values.reshape(28, 28)
+    pixels = data_path.iloc[i, 1:].values.reshape(28, 28)
 
     plt.imshow(pixels, cmap='gray')
     plt.title(f'Label: {label}')
@@ -18,4 +18,4 @@ def data_visualizer(i):
     return
 
 
-data_visualizer(3)
+# data_visualizer(3, data_path=pd.read_csv('digits_dataset.csv'))

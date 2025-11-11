@@ -28,7 +28,7 @@ def pca_training(latent_dimensions, data):
     reduced_data.insert(0, 'label', digits) #insert digits at the start
     
     #write to csv the final preprocessed training data
-    reduced_data.to_csv('DR_test.csv', index=False)
+    reduced_data.to_csv('DR_train_data.csv', index=False)
 
     #you should be returning the eigenvectors in order greatest to least. and the mean too
     return pca_model.mean_, pca_model.components_

@@ -5,6 +5,10 @@
 #3) DR_test_data.csv (dimensionally reduced test data)
 #all other csv files are intermediate and unused.
 
+#NUMBER OF PRINCIPlE COMPONENTS CHOSEN: 20
+
+
+
 import data_visualizer
 import train_val_test_splitter
 import pandas as pd
@@ -34,7 +38,22 @@ print('No issues on Visualization after SPlit')
 #THESE WILL BE THE FINAL DATA FILES THAT OUR FFNN MODEL WILL TRAIN ON.
 from  pca_test_val import pca_test_val
 #reducing to 3 latent dimensions
-pca_test_val(n=3, train=train_data, val=validation_data, test=test_data)
+mean, components =pca_test_val(n=20, train=train_data, val=validation_data, test=test_data)
 print('No issues PCA Dimensionality Reduction')
 
-#verify that 
+#verify that your PCA reduced files actulally look like digits when reconstructed.
+# use mean and components on the reduced data to reconstruct a single digit to verify.
+reduced_train_data = pd.read_csv('DR_train_data.csv')
+
+from dimensionality_reduced_visualization import dimensionality_reduced_visualization
+dimensionality_reduced_visualization(index=1, data_path=reduced_train_data, mean=mean, components=components)
+print("No issues with visualization of PCAed data")
+#REFER TO README, all unused csv files will be moved to /intermediate_files/ folder
+import os
+import shutil
+intermediate_files = ['train_data.csv', 'validation_data.csv', 'test_data.csv']
+os.makedirs('intermediate_files', exist_ok=True)
+for file in intermediate_files:
+    shutil.move(file, f'intermediate_files/{file}')
+
+print('intermediate files stored')

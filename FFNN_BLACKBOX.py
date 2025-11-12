@@ -1,4 +1,4 @@
-#What you need to know. Can ignore the rest of the code.
+#What you need to know.
 #### Load_Data(data_path): loads a csv file and returns features and labels as numpy arrays. YOU SHOULD USE DR_train_data.csv, DR_val_data.csv as data_path inputs.
 #### create_dataloader(train_features, train_labels, val_features, val_labels, test_features, test_labels, batch_size): creates pytorch dataloaders for train, val, test datasets out of the Load_Data outputs
 #### model, gradient_descent_optimizer, criterion =initialize_network(#input_features, #hidden_neurons, #n_layers, #output_neurons, activation_function, learningRate): initializes the n-layered feedforward neural network with the specified hyperparameters and returns the model, optimizer, and loss criterion.
@@ -126,16 +126,18 @@ def training(train_loader, val_loader, model, optimizer, criterion, epochs):
             validation_acc = accuracy_evaluation(model, val_loader)
             training_accuracy.append(training_acc)
             validation_accuracy.append(validation_acc)
-        plt.figure(1)
-        plt.plot(range(epochs), training_loss, label='Training Loss')
-        plt.plot(range(epochs), validation_loss, label='Validation Loss')
-        plt.legend()
-        plt.show()
-        plt.figure(2)
-        plt.plot(range(epochs), training_accuracy, label='Training Accuracy')
-        plt.plot(range(epochs), validation_accuracy, label='Validation Accuracy')
-        plt.legend()
-        plt.show()
+        # plt.figure(1)
+        # plt.plot(range(epochs), training_loss, label='Training Loss')
+        # plt.plot(range(epochs), validation_loss, label='Validation Loss')
+        # plt.title('Loss vs Epochs')
+        # plt.legend()
+        # plt.show()
+        # plt.figure(2)
+        # plt.plot(range(epochs), training_accuracy, label='Training Accuracy')
+        # plt.plot(range(epochs), validation_accuracy, label='Validation Accuracy')
+        # plt.title('Accuracy vs Epochs')
+        # plt.legend()
+        # plt.show()
         
         return training_accuracy, validation_accuracy, training_loss, validation_loss
         

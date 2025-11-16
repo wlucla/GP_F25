@@ -126,7 +126,7 @@ def training(train_loader, val_loader, model, optimizer, criterion, epochs):
             validation_acc = accuracy_evaluation(model, val_loader)
             training_accuracy.append(training_acc)
             validation_accuracy.append(validation_acc)
-        # plt.figure(1)
+        plt.figure(1)
         # plt.plot(range(epochs), training_loss, label='Training Loss')
         # plt.plot(range(epochs), validation_loss, label='Validation Loss')
         # plt.title('Loss vs Epochs')
@@ -140,7 +140,51 @@ def training(train_loader, val_loader, model, optimizer, criterion, epochs):
         # plt.show()
         
         return training_accuracy, validation_accuracy, training_loss, validation_loss
+
+def training_for_test_set(train_loader, test_loader, model, optimizer, criterion, epochs):
+
+        training_loss=[]
+        test_loss=[]
+        training_accuracy=[]
+        test_accuracy=[]
+        for epoch in range(epochs):
+            model.train()
+            for features, labels in train_loader:
+                optimizer.zero_grad() #delete remaining stuff
+                predict = model(features)
+                loss = criterion(predict, labels)
+                loss.backward()
+                optimizer.step()
+            
+            #evaluate hyperparametenrs on validation set
+            val_loss = loss_evaluation(model, test_loader, criterion)
+            train_loss= loss_evaluation(model, train_loader, criterion)
+            training_loss.append(train_loss)
+            test_loss.append(val_loss)
+
+
+
+            training_acc = accuracy_evaluation(model, train_loader)
+            validation_acc = accuracy_evaluation(model, test_loader)
+            training_accuracy.append(training_acc)
+            test_accuracy.append(validation_acc)
+        plt.figure(1)
+        plt.plot(range(epochs), training_loss, label='Training Loss')
+        plt.plot(range(epochs), test_loss, label='Test Loss')
+        plt.title('Loss vs Epochs')
+        plt.legend()
+        plt.show()
+        plt.figure(2)
+        plt.plot(range(epochs), training_accuracy, label='Training Accuracy')
+        plt.plot(range(epochs), test_accuracy, label='Test Accuracy')
+        plt.title('Accuracy vs Epochs')
+        plt.legend()
+        plt.show()
         
+        print(f"Final training accuracy = {training_accuracy[-1]}\n")
+        print(f"Final test accuracy = {test_accuracy[-1]}")
+              
+        return training_accuracy[-1], test_accuracy[-1]
 
 
 

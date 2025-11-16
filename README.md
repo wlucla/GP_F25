@@ -10,5 +10,5 @@ If you dont care or know about what PCA is, just know that after you run main1_d
 
 
 CURRENT BEST HYPERPARAMETERS:
-Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184}
+Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184} epochs, 102
 Best Validation Accuracy: 0.9613333333333334

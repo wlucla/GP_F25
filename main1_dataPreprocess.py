@@ -15,7 +15,7 @@ import pandas as pd
 data = pd.read_csv('digits_dataset.csv')
 
 #visualize a digit arbitratily
-data_visualizer.data_visualizer(10, data_path=data)
+data_visualizer.data_visualizer(1, data_path=data)
 print('No issues on Visualization')
 
 #split the dataset into train, validation and test sets

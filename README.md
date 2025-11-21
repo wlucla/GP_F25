@@ -12,3 +12,12 @@ If you dont care or know about what PCA is, just know that after you run main1_d
 CURRENT BEST HYPERPARAMETERS:
 Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184} epochs, 102
 Best Validation Accuracy: 0.9613333333333334
+
+
+STEPS TO RUN THE ALGORITHM COMPLETELY.
+1. If not already, delete intermediate_files
+2. If not already, delete DR_test_data.csv, DR_train_data.csv, DR_val_dataset.csv
+3. RUN main1_dataPreprocess.py
+4. RUN mainHyperparameterRandomSearch.py ; in line 13, edit the number of random training trials you need. At 100 trials, training can take really wrong. Default is 100.
+5. RUN MAIN_TEST_FFNN.py with the best hyperparameters found in step 4. 
+6. RUN the MIT notebok cnn.ipynb and compare our FFNN and their CNN's performance on the same task.

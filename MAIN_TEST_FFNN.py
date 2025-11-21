@@ -21,4 +21,4 @@ output_neurons = 10
 activation_function='relu'
 epochs =102
 model, optimizer, criterion =FFNN_BLACKBOX.initialize_network(input_features, hidden_neurons, n_layers, output_neurons, activation_function, LR=LR)
-FFNN_BLACKBOX.training_for_test_set(train_loader, test_loader, model, optimizer, criterion, epochs)
+FFNN_BLACKBOX.test_set_eval(train_loader, test_loader, model, optimizer, criterion, epochs)

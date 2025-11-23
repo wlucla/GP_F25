@@ -31,6 +31,17 @@ def hyperparameter_random_search(train_features,train_labels,val_features, val_l
         model, optimizer, criterion = ffnn.initialize_network(train_loader.dataset.tensors[0].shape[1], hidden_neurons, n_layers, 10, activation_function, lr)
         train_accuracy, val_accuracy,_,_ = ffnn.training(train_loader, val_loader, model, optimizer, criterion, epochs=epochs)  # Get final validation accuracy
         
+
+
+        #COMMENT OUT PRINTING BLOCK WHEN RUNNING YOUR OWN CODE TO PREVENT TONS OF PLOTS FROM PRINTING
+        plt.figure()
+        temp =np.arange(epochs)
+        plt.plot(temp, train_accuracy, label='Training Accuracy')
+        plt.plot(temp, val_accuracy, label='Validation Accuracy' )
+        plt.title(f'LR={lr}, Number of Hidden Neurons={hidden_neurons}, Number of Hidden Layers={n_layers}, Activation={activation_function}, Batch Size={batch_size}, Epochs={epochs}')
+        plt.legend()
+        plt.show()
+
         if val_accuracy[-1] > top_accuracy:
             top_val_accuracy = val_accuracy
             top_train_accuracy = train_accuracy

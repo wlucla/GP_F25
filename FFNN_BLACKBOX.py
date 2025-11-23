@@ -175,9 +175,9 @@ def test_set_eval(train_loader, test_loader, model, optimizer, criterion, epochs
         # plt.legend()
         # plt.show()
         plt.figure(1)
-        plt.plot(range(epochs), training_accuracy, label='Training Accuracy')
-        plt.plot(range(epochs), test_accuracy, label='Test Accuracy')
-        plt.title('Accuracy vs Epochs')
+        plt.plot(range(epochs), training_accuracy, label='Training Accuracy', color='purple')
+        plt.plot(range(epochs), test_accuracy, label='Test Accuracy', color='red')
+        plt.title('Results of Best Hyperparameters on Test Data Set')
         plt.legend()
         plt.show()
         

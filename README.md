@@ -9,10 +9,14 @@ If you dont care or know about what PCA is, just know that after you run main1_d
 
 
 
-CURRENT BEST HYPERPARAMETERS:
-Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184} epochs, 102
-Best Validation Accuracy: 0.9613333333333334
+CURRENT BEST HYPERPARAMETERS FOR OUR FFNN:
+Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184}
+Best TEST Accuracy : 0.9453333333333334
 
+PERFORMANCE OF CNN FROM MIT LICENCE: 98.8% test accuracy after 1 epoch only. Batch size =184.
+
+
+CONCLUSION: FFNN underperforms CNN in both accuracy and computational complexity.
 
 STEPS TO RUN THE ALGORITHM COMPLETELY.
 1. If not already, delete intermediate_files

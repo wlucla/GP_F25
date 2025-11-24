@@ -9,7 +9,9 @@ PERFORMANCE OF CNN FROM MIT LICENCE: 98.8% test accuracy after 1 epoch only. Bat
 CONCLUSION: FFNN underperforms CNN in both accuracy and computational complexity.
 
 STEPS TO RUN THE ALGORITHM COMPLETELY.
+
 0. Clone repository.
+
 1. If not already, delete intermediate_files
 2. If not already, delete DR_test_data.csv, DR_train_data.csv, DR_val_dataset.csv
 3. RUN main1_dataPreprocess.py (create PCA processed data split into test, train, val)

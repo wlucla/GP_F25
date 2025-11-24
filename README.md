@@ -15,7 +15,7 @@ STEPS TO RUN THE ALGORITHM COMPLETELY.
 1. If not already, delete intermediate_files
 2. If not already, delete DR_test_data.csv, DR_train_data.csv, DR_val_dataset.csv
 3. RUN main1_dataPreprocess.py (create PCA processed data split into test, train, val)
-4. RUN mainHyperparameterRandomSearch.py ; in line 13, edit the number of random sets of hyperparameters you want to test. At 100 trials, training can take really wrong (~2.3 hours). Default is 100.
+4. RUN mainHyperparameterRandomSearch.py ; in line 13, edit the number of random sets of hyperparameters you want to test. At 100 sets, training can take really wrong (~2.3 hours). Default to 100 sets.
 5. RUN MAIN_TEST_FFNN.py with the best hyperparameters found in step 4. (yields test accuracy)
 6. RUN the MIT notebok cnn.ipynb and compare our FFNN and their CNN's performance on the same task. (make sure batch size is the same as ours)
 

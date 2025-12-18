@@ -1,4 +1,7 @@
 # GP_F25
+
+Read the Report for summary of performance.
+
 CURRENT BEST HYPERPARAMETERS FOR OUR FFNN:
 Best Hyperparameters: {'learning_rate': 0.013494565585173276, 'hidden_neurons': 201, 'n_layers': 1, 'activation_function': 'relu', 'batch_size': 184}
 Best TEST Accuracy : 0.9453333333333334

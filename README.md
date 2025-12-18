@@ -1,4 +1,4 @@
-# GP_F25
+# Neural Net image classification
 
 Read the Report for summary of performance.
 
